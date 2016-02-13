@@ -21,12 +21,11 @@ class ClientRegistrationTest < Minitest::Test
   # end
 
   def test_the_client_successfully_posts_data
-
     post '/sources', { "rootUrl" => "http://www.google.com", "identifier" => "google" }
     assert_equal 1, Client.count
     assert_equal 200, last_response.status
     assert_equal "{\"identifier\":\"google\"}", last_response.body
-    #Unsure where this undefined method error is coming from???
+
     post '/sources/google/data', RequestParser.parse_request(payload, "google")
     assert_equal 1, PayloadRequest.count
     assert_equal 200, last_response.status

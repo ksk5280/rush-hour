@@ -3,8 +3,8 @@ require 'pry'
 
 class RequestParser
 
-  def self.parse_request(request, identifier)
-    request = JSON.parse(request)
+  def self.parse_request(p, identifier)
+    request = JSON.parse(p)
 
     url_addy = Url.find_or_create_by(address: request["url"])
     ref = ReferrerUrl.find_or_create_by(url_address: request["referredBy"])
@@ -15,18 +15,22 @@ class RequestParser
     ip_addy = Ip.find_or_create_by(ip_address: request["ip"])
     client = Client.find_or_create_by(identifier: identifier)
 
-    PayloadRequest.create(url_id: url_addy.id,
-                          requested_at: request["requestedAt"],
-                          responded_in: request["respondedIn"],
-                          referrer_url_id: ref.id,
-                          request_type_id: req.id,
-                          parameters: request["parameters"],
-                          event_name_id: event.id,
-                          user_system_id: sys.id,
-                          resolution_id: res.id,
-                          ip_id: ip_addy.id,
-                          client_id: client.id,
-                          unique_sha: Digest::SHA1.hexdigest("#{request}")
-                          )
+    payload = {
+      url_id: url_addy.id,
+      requested_at: request["requestedAt"],
+      responded_in: request["respondedIn"],
+      referrer_url_id: ref.id,
+      request_type_id: req.id,
+      parameters: request["parameters"],
+      event_name_id: event.id,
+      user_system_id: sys.id,
+      resolution_id: res.id,
+      ip_id: ip_addy.id,
+      client_id: client.id,
+      unique_sha: Digest::SHA1.hexdigest("#{p}")
+    }
+
+    PayloadRequest.create(payload)
+    payload
   end
 end

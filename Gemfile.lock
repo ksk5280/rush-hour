@@ -18,6 +18,7 @@ GEM
     arel (6.0.3)
     bond (0.5.1)
     builder (3.2.2)
+    byebug (8.2.1)
     capybara (2.6.2)
       addressable
       mime-types (>= 1.16)
@@ -44,6 +45,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.3.0)
+      byebug (~> 8.0)
+      pry (~> 0.10)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -91,6 +95,7 @@ DEPENDENCIES
   minitest
   pg
   pry
+  pry-byebug
   rack-test
   shotgun
   sinatra

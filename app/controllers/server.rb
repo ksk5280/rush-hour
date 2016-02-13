@@ -22,7 +22,9 @@ module RushHour
 
     post '/sources/:identifier/data' do
       # @client = Client.new(:root_url => params["rootUrl"], :identifier => params["identifier"])
-      @client_payload = RequestParser.new
+      @client = Client.identifier
+      # @client_payload = RequestParser.new
+      "Payload Received"
     end
   end
 
