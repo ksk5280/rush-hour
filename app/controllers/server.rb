@@ -6,13 +6,11 @@ module RushHour
     end
 
     get '/' do
-
       erb :home
     end
 
     post '/sources' do
       @client = Client.new(:root_url => params["rootUrl"], :identifier => params["identifier"])
-
       status PathParser.sources_parser(@client, params)["status"]
       body PathParser.sources_parser(@client, params)["body"]
     end
@@ -25,7 +23,6 @@ module RushHour
 
     get '/sources/:identifier/urls/:relative_path' do |identifier, relative_path|
       @client = Client.where(identifier: identifier).first
-      # PathParser.relative_path_parser(@client, identifier, relative_path)
       url = @client.root_url + '/' + relative_path
       unless Url.pluck(:address).include?(url)
         redirect '/missing-url'

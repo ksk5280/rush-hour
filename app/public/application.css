@@ -1,70 +1,133 @@
+body#background {
+  background: url('img/traffic.jpg') no-repeat 50% 50% fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
 
 body {
   padding-top: 70px;
-  background-color: white;
+  background-color: rgb(69,173,168);
+  font-family: 'Raleway', sans-serif;
 }
 
 nav {
-  padding-left: 20px;
-  padding-top: 10px;
-  background-color: rgb(234, 242, 222);
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.8);
   font-size: 20px;
 }
 
 h4 {
-  font-family: serif;
+  font-size: 24px;
   font-weight: bold;
 }
 
+ul {
+  list-style: none;
+}
+
+a {
+  color: rgb(196,187,172);
+  font-size: 24px;
+}
+
+a:hover {
+  color: rgb(0,84,190);
+  text-decoration: none;
+}
+
 .info-text {
-  font-family: monospace;
+  font-size: 18px;
+}
+
+.title {
+  font-family: 'Racing Sans One', cursive;
+  font-size: 100px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.home {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.home>h3 {
+  font-size: 48px;
+}
+
+.home>h5 {
+  font-size: 18px;
 }
 
 .url-specific-stats {
-
 }
 
 .client-stats {
-
-}
-
-.client-response-times {
-  height: 300px;
-  background-color: rgb(157,224,173);
-}
-
-.client-frequent-requests {
-  height: 300px;
-  background-color: rgb(69,173,168);
-}
-
-.client-breakdowns {
-  height: 300px;
-  background-color: rgb(84,121,128);
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .client-urls {
-  background-color: rgb(215, 228, 194);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: none;
 }
 
 .hourly-breakdown {
 }
 
-.url-response-time {
-  height: 300px;
-  background-color: rgb(157,224,173);
+.url-specific-stats {
 }
 
-.url-verbs {
-  height: 300px;
-  background-color: rgb(69,173,168);
+.client-stats>.stats-div {
+  height: 350px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  flex: 33.3333;
+  border: none;
+}
+.client-stats>.stats-div:nth-child(3) {
+  margin-right: 0;
+}
+.client-stats>.client-urls {
+  flex: 100%;
 }
 
-.url-top-threes {
-  height: 300px;
-  background-color: rgb(84,121,128);
+@media only screen and (max-width: 1000px) {
+  .client-stats>.stats-div {
+    flex: 100%;
+  }
 }
 
-#welcome {
-  background-color: rgb(215, 228, 194);
+.bottom-margin {
+  margin-bottom: 20px;
+}
+
+.white-font {
+  color: white;
+}
+
+.brand {
+  font-family: 'Racing Sans One', cursive;
+  font-size: 32px;
+  color: white;
+  margin: 0;
+  padding: 0 30px 0 20px;
+}
+
+.headers {
+  font-size: 24px;
+}
+
+.table-rows {
+  font-size: 18px;
 }

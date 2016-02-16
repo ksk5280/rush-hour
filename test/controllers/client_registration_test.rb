@@ -23,7 +23,6 @@ class ClientRegistrationTest < Minitest::Test
     assert_equal 400, last_response.status
     assert_equal "Missing Parameters", last_response.body
   end
-  #
 
   def test_returns_error_message_for_preexisting_identifier
     post '/sources', { "rootUrl" => "http://www.google.com", "identifier" => "google" }

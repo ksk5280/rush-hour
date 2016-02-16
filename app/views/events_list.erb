@@ -1,9 +1,11 @@
-<h1>Events</h1>
+<%= erb(:'partials/_navbar') %>
 
-<h4>Choose Event to View Hourly Breakdown</h4>
+<h1 class="white-font">Events</h1>
+
+<h4 class="white-font">Choose Event to View Hourly Breakdown</h4>
 
 <ol>
-<% @all_events.each do |event| %>
-  <li><a href="/sources/<%= @identifier %>/events/<%= event.event_name %>"><%= event.event_name %></a></li>
-<% end %>
+  <% @all_events.each do |event| %>
+    <li><a href="/sources/<%= @identifier %>/events/<%= event.event_name %>"><%= event.event_name %></a></li>
+  <% end %>
 </ol>

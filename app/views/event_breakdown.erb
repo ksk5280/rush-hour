@@ -1,11 +1,29 @@
-<h1>Event Breakdown for  <%= @client.identifier.capitalize %></h1>
-<h3>Event Type: <%= @event.event_name %></h3>
-<h4>Total Occurrences <%= EventName.event_total(@client, @event) %></h4>
-<div class="hourly-breakdown">
-  <ul>
-    <% hours = EventName.hourly_list(@client, @event)%>
-    <% (0..23).to_a.each do |hour| %>
-      <li>  Hour <%= hour %>:00 => <%= hours.count(hour) %> </li>
-    <% end %>
-  </ul>
+<%= erb(:'partials/_navbar') %>
+<div class="white-font home well">
+  <h1>Event Breakdown for  <%= @client.identifier.capitalize %></h1>
+  <h4>Event Type: <%= @event.event_name %></h4>
+
+  <div class="total-occurrences">
+    <h4>Total Occurrences: <%= EventName.event_total(@client, @event) %></h4>
+  </div>
+
+  <div class="hourly-breakdown">
+    <table class="table table-condensed">
+    <thead class="headers">
+      <tr>
+        <td>Timeframe</td>
+        <td>Occurrences</td>
+      </tr>
+    </thead>
+    <tbody class="table-rows">
+      <% hours = EventName.hourly_list(@client, @event)%>
+      <% (0..23).to_a.each do |hour| %>
+      <tr>
+        <td>Hour <%= hour %>:00</td>
+        <td><%= hours.count(hour) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
 </div>
