@@ -22,12 +22,13 @@ module RushHour
     end
 
     get '/sources/:identifier/urls/:relative_path' do |identifier, relative_path|
-      @client = Client.where(identifier: identifier).first
+      @client = Client.find_by(identifier: identifier)
       url = @client.root_url + '/' + relative_path
+
       unless Url.pluck(:address).include?(url)
         redirect '/missing-url'
       else
-        @url_obj = Url.where(address: url).first
+        @url_obj = Url.find_by(address: url)
         erb :url_stats
       end
     end
@@ -37,7 +38,7 @@ module RushHour
     end
 
     get '/sources/:identifier' do |identifier|
-      @client = Client.where(identifier: identifier).first
+      @client = Client.find_by(identifier: identifier)
 
       if !@client.nil?
         @payloads = PayloadRequest.where(client_id: @client.id)
@@ -49,15 +50,15 @@ module RushHour
     end
 
     get '/sources/:identifier/events' do |identifier|
-      @client = Client.where(identifier: identifier).first
+      @client = Client.find_by(identifier: identifier)
       @all_events = @client.event_names.uniq if !@client.nil?
       @identifier = identifier
       erb :events_list
     end
 
     get '/sources/:identifier/events/:event_name' do |identifier, event_name|
-      @client = Client.where(identifier: identifier).first
-      @event = EventName.where(event_name: event_name).first
+      @client = Client.find_by(identifier: identifier)
+      @event = EventName.find_by(event_name: event_name)
       erb :event_breakdown
     end
   end
