@@ -9,12 +9,12 @@ body#background {
 body {
   padding-top: 70px;
   background-color: rgb(69,173,168);
+  font-family: 'Raleway', sans-serif;
 }
 
 nav {
-  padding-left: 20px;
-  padding-top: 10px;
-  background-color: rgb(215, 228, 194);
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.8);
   font-size: 20px;
 }
 
@@ -28,11 +28,40 @@ ul {
 }
 
 a {
-  color: rgb(84,121,128);
+  color: white;
+  font-size: 24px;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .info-text {
   font-family: monospace;
+}
+
+.title {
+  font-family: 'Racing Sans One', cursive;
+  font-size: 100px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.home {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.home>h3 {
+  font-size: 48px;
+}
+
+.home>h5 {
+  font-size: 18px;
 }
 
 .url-specific-stats {
@@ -40,23 +69,9 @@ a {
 }
 
 .client-stats {
-
+  display: flex;
+  flex-flow: row wrap;
 }
-
-/*.client-response-times {
-  height: 300px;
-  background-color: rgb(157,224,173);
-}
-
-.client-frequent-requests {
-  height: 300px;
-  background-color: rgb(69,173,168);
-}
-
-.client-breakdowns {
-  height: 300px;
-  background-color: rgb(84,121,128);
-}*/
 
 .client-urls {
   background-color: rgb(215, 228, 194);
@@ -65,25 +80,27 @@ a {
 .hourly-breakdown {
 }
 
-/*.url-response-time {
-  height: 300px;
-  background-color: rgb(157,224,173);
+.url-specific-stats {
+  
 }
 
-.url-verbs {
-  height: 300px;
-  background-color: rgb(69,173,168);
-}*/
-
-.stats-div {
+.client-stats>.stats-div {
   height: 300px;
   background-color: rgb(84,121,128);
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  flex: 33.3333;
+  border: none;
+}
+.client-stats>.stats-div:nth-child(3) {
+  margin-right: 0;
 }
 
-#welcome {
-  font-family: 'Racing Sans One', cursive;
-  font-size: 64px;
+.bottom-margin {
+  margin-bottom: 20px;
+}
+
+.white-font {
   color: white;
-  background-color: rgba(0, 0, 0, 0.1);
-  /*border: 1px solid black;*/
 }
