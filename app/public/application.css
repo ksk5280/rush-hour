@@ -28,11 +28,12 @@ ul {
 }
 
 a {
-  color: white;
+  color: rgb(196,187,172);
   font-size: 24px;
 }
 
 a:hover {
+  color: rgb(0,84,190);
   text-decoration: none;
 }
 
