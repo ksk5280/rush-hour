@@ -19,7 +19,7 @@ nav {
 }
 
 h4 {
-  font-family: serif;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -37,7 +37,7 @@ a:hover {
 }
 
 .info-text {
-  font-family: monospace;
+  font-size: 18px;
 }
 
 .title {
@@ -74,19 +74,22 @@ a:hover {
 }
 
 .client-urls {
-  background-color: rgb(215, 228, 194);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: none;
 }
 
 .hourly-breakdown {
 }
 
 .url-specific-stats {
-  
+
 }
 
 .client-stats>.stats-div {
-  height: 300px;
-  background-color: rgb(84,121,128);
+  height: 350px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   padding: 10px;
   margin-right: 10px;
   margin-bottom: 10px;

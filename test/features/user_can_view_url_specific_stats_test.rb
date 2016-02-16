@@ -21,7 +21,7 @@ class UserCanViewUrlSpecificStats < FeatureTest
     within(".url-specific-stats") do
       assert page.has_content? "Max Response Time"
       assert page.has_content? "Min Response Time"
-      assert page.has_content? "Response Times Across All Requests"
+      assert page.has_content? "All Response Times"
       assert page.has_content? "Average Response Time"
       assert page.has_content? "HTTP Verbs Used"
       assert page.has_content? "Top Three Referrers"
