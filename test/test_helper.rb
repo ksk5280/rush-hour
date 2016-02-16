@@ -33,9 +33,6 @@ module TestHelpers
     RushHour::Server
   end
 
-#change find_or_create_by to this format:
-#GroupMember.where(:member_id => 4, :group_id => 7).first_or_create
-
   def create_payload_1
     payload1 = {
       url_id:           Url.find_or_create_by(address: "http://www.jumpstartlab.com/blog").id,

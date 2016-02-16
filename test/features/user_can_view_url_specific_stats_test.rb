@@ -4,15 +4,6 @@ class UserCanViewUrlSpecificStats < FeatureTest
 
   def test_successfully_shows_data
     create_9_payloads_for_url_stats
-    # As a registered user
-    # When I visit my user page
-    # visit '/sources/jumpstartlab'
-    # and I click on the urls link
-    # click_link ("#urls")
-    # assert_equal '/sources/jumpstartlab/urls', current_path
-    # # and I click on a specific url link
-    # click_link ('/blog')
-    # assert_equal '/sources/jumpstartlab/urls/blog', current_path
 
     # when I visit a page for a specific url
     visit '/sources/jumpstartlab/urls/blog'
