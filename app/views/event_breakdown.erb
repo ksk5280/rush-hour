@@ -1,3 +1,5 @@
+<%= erb(:'partials/_navbar') %>
+
 <h1>Event Breakdown for  <%= @client.identifier.capitalize %></h1>
 <h3>Event Type: <%= @event.event_name %></h3>
 <h4>Total Occurrences <%= EventName.event_total(@client, @event) %></h4>

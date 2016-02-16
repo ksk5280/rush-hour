@@ -1,19 +1,34 @@
+body#background {
+  background: url('img/traffic.jpg') no-repeat 50% 50% fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
 
 body {
   padding-top: 70px;
-  background-color: white;
+  background-color: rgb(69,173,168);
 }
 
 nav {
   padding-left: 20px;
   padding-top: 10px;
-  background-color: rgb(234, 242, 222);
+  background-color: rgb(215, 228, 194);
   font-size: 20px;
 }
 
 h4 {
   font-family: serif;
   font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: rgb(84,121,128);
 }
 
 .info-text {
@@ -28,7 +43,7 @@ h4 {
 
 }
 
-.client-response-times {
+/*.client-response-times {
   height: 300px;
   background-color: rgb(157,224,173);
 }
@@ -41,7 +56,7 @@ h4 {
 .client-breakdowns {
   height: 300px;
   background-color: rgb(84,121,128);
-}
+}*/
 
 .client-urls {
   background-color: rgb(215, 228, 194);
@@ -50,7 +65,7 @@ h4 {
 .hourly-breakdown {
 }
 
-.url-response-time {
+/*.url-response-time {
   height: 300px;
   background-color: rgb(157,224,173);
 }
@@ -58,13 +73,17 @@ h4 {
 .url-verbs {
   height: 300px;
   background-color: rgb(69,173,168);
-}
+}*/
 
-.url-top-threes {
+.stats-div {
   height: 300px;
   background-color: rgb(84,121,128);
 }
 
 #welcome {
-  background-color: rgb(215, 228, 194);
+  font-family: 'Racing Sans One', cursive;
+  font-size: 64px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+  /*border: 1px solid black;*/
 }

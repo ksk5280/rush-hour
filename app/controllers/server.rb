@@ -6,13 +6,11 @@ module RushHour
     end
 
     get '/' do
-
       erb :home
     end
 
     post '/sources' do
       @client = Client.new(:root_url => params["rootUrl"], :identifier => params["identifier"])
-
       status PathParser.sources_parser(@client, params)["status"]
       body PathParser.sources_parser(@client, params)["body"]
     end
