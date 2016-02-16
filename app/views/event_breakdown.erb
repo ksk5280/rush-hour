@@ -8,14 +8,14 @@
   </div>
 
   <div class="hourly-breakdown">
-    <table class="table table-inverse">
-    <thead>
+    <table class="table table-condensed">
+    <thead class="headers">
       <tr>
-        <th>Timeframe</th>
-        <th>Occurrences</th>
+        <td>Timeframe</td>
+        <td>Occurrences</td>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="table-rows">
       <% hours = EventName.hourly_list(@client, @event)%>
       <% (0..23).to_a.each do |hour| %>
       <tr>
