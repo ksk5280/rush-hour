@@ -98,6 +98,15 @@ a:hover {
 .client-stats>.stats-div:nth-child(3) {
   margin-right: 0;
 }
+.client-stats>.client-urls {
+  flex: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .client-stats>.stats-div {
+    flex: 100%;
+  }
+}
 
 .bottom-margin {
   margin-bottom: 20px;

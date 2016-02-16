@@ -38,7 +38,7 @@
   </p>
 </div>
 
-<div class="client-urls col-md-12 well">
+<div class="client-urls well">
   <h4>URLs visited from most to least<br></h4>
   <ul><% @payloads.sort_urls_by_request_freqency.each do |url| %>
     <li><a href="/sources/<%= @client.identifier %>/urls/<%= url.split("/")[3..-1].join %>"><%= url %></a></li>
